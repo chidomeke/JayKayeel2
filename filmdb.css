@@ -71,6 +71,7 @@ div#root {
     border-radius: 0.3125em;
     background-color: rgba(0, 13, 200, .2);
     position: relative;
+    height: 18.75em;
 }
 
 img {
