@@ -1,16 +1,16 @@
 const filmList = [
     'Frozen',
-    'Daredevil (Bulls eye)',
+    'Daredevil',
     'I Am Mother',
     'Project Power',
     'Independence Day',
-    'Indiana jones and the lost crusade',
+    'Indiana jones and the last crusade',
     'Ip Man 4: The Finale',
     'Underwater',
     'Beowulf',
     'Below zero',
     'Spider-Man: Far from Home',
-    'Tower Hiest',
+    'Tower Heist',
     'Run All Night',
     'Dracula untold',
     'Double World',
@@ -20,10 +20,10 @@ const filmList = [
     'Shrek forever After',
     'Megamind',
     'Goosebumps',
-    'San Adreas',
+    'San Andreas',
     'League of Gods',
     'Journey',
-    'Juorney 2: The Mysterious Island',
+    'Journey 2: The Mysterious Island',
     'Outside the Wire',
     'Wonder Woman 1984',
     'Tenet',
@@ -50,7 +50,6 @@ let searchForMovie = (value) => {
         .then(response => response.json())
         .then(json => {
             let search = json
-            console.log(value + ' returned this ' +search)
             return loopThrough(search, value)
         })
         .catch(err => console.log(err.message))
