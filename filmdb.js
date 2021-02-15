@@ -75,8 +75,8 @@ let fetchMovieData = async (movie) => {
     }
 }
 
-//Define the buildURL function the sets the url for a particular movie from the
-//baseURL and the movie's id.
+//Define the buildURL function that sets the url for a particular movie from the
+//baseURL and the movie's id obtained from the search result.
 //Then call the fetchMovieData function using the movie's url as the parameter.
 function buildURL(data) {
     let movieUrl = baseURL
@@ -86,7 +86,6 @@ function buildURL(data) {
     fetchMovieData(movieUrl)
         .then(json => {
             let info = json
-            console.log(info)
             return displayMoviePoster(info)
         })
 }
@@ -126,7 +125,7 @@ function displayMoviePoster(json) {
 
 //Define a function that displays and cancels the overview of a movie.
 function overviewDisplay(json, cell, article) {
-    article.textContent = json.overview + '\r\n' + 'Release date: ' + json['release_date']
+    article.textContent = json.overview + '<br>' + 'Release date: ' + json['release_date']
     let attr = article.getAttribute('class')
     if(attr != 'show') {
         article.className = 'show'
@@ -136,7 +135,7 @@ function overviewDisplay(json, cell, article) {
 }
 
 //Define the loopThrough function that loops through the result section of
-//the json file returned in the searchForMovie() to find the one that matches
+//the json file returned in the searchForMovie() function to find the one that matches
 //exactly the movie title.
 //If no exact match is found it returns the first movie in the file.
 function loopThrough(s, val) {
@@ -166,8 +165,3 @@ function validateInput(e) {
     input.className = check
     if(test) searchForMovie(input.value)
 }
-
-// hint: use a for loop to create the boxes and add information to them.
-
-//level up:
-//1. Are you able to add your own personal rating to each film card too?
